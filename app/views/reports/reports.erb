@@ -1,6 +1,6 @@
 <p> Welcome, <%= current_user.username %> 
 
-<h2> Reports </h2> 
+<h2>Citizen Reports </h2> 
 
 <% @reports.each do |report| %> 
 
@@ -10,8 +10,9 @@
     <div>
 
 <% end %>
-
-<a href="/create_report"> Create Report </a>
+</br>
+<a href="/create_report"> Create Report </a></br>
+</br>
 
 <a href="/logout"> Log Out </a>
 
