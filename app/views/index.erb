@@ -1,0 +1,22 @@
+<h1>Citizen Report</h1>
+<h3>Keep the city safe<h3> 
+
+<nav>
+
+    <% if logged_in? %>
+
+    <a href="/reports/new"> Create Report </a>
+    <a href="/reports"> All Reports </a>
+    <a href="/logout"> Log Out </a>
+    <p>Welcome, <%= current_user.username %></p>
+
+    <% else %>
+
+    <a href="/login">Log In</a></br>
+    <a href="/signup">Create New Account </a>
+   
+
+    <% end %>
+
+
+</nav>
