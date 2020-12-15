@@ -1,0 +1,17 @@
+<p> Welcome, <%= current_user.username %> 
+
+<h2> Reports </h2> 
+
+<% @reports.each do |report| %> 
+
+    <div> 
+    <a href="/reports/<%= post.id %>" <strong>Created At: <%= report.created_at %> </strong></a> <br><%= report.content %></br> 
+
+    <div>
+
+<% end %>
+
+<a href="/create_report"> Create Report </a>
+
+<a href="/logout"> Log Out </a>
+

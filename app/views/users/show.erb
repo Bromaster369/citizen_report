@@ -1,0 +1,7 @@
+<p> Here are your reports: <%= @user.username %> 
+<% @user.reports.each do |report| %> 
+    <div>
+        <%= report.content %>
+        </div>
+<% end %> 
+
