@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     end 
 
     get '/signup' do
+      
         if !logged_in?
           erb :'users/create_user', locals: {message: "Please create a new account before you sign in"}
         else
