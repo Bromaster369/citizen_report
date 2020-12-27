@@ -5,8 +5,16 @@
   <input type="submit" value="Delete Report">
 </form>
 
-<a href="/reports/<%=@report.id%>/edit">Edit Report </a></br>
+<% if @report.user == current_user  %>
+<a href="/reports/<%=@report.id%>/edit">Edit Report </a>
 
+<% else%>
+
+
+Reported by: <%= @report.user.username %>
+ 
+
+<% end %></br>
 <a href="/create_report"> Create Another Report </a></br>
 
 <a href="/reports"> All Reports</a>
