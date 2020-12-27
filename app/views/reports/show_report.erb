@@ -1,9 +1,10 @@
 <p><%= @report.content %>
-
+<% if @report.user == current_user  %>
 <form method="post" action="/reports/<%=@report.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Report">
 </form>
+<% end %> </br>
 
 <% if @report.user == current_user  %>
 <a href="/reports/<%=@report.id%>/edit">Edit Report </a>
