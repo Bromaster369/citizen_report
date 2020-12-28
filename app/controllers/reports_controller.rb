@@ -26,7 +26,7 @@ class ReportsController < ApplicationController
           if params[:content] == ""
             redirect to "/reports/new"
           else
-            @report = current_user.reports.build(content: params[:content])
+            @report = current_user.reports.build(content: params[:content], location: params[:location])
             if @report.save
               redirect to "/reports/#{@report.id}"
             else
@@ -69,7 +69,7 @@ class ReportsController < ApplicationController
           else
             @report = Report.find_by_id(params[:id])
             if @report && @report.user == current_user
-              if @report.update(content: params[:content])
+              if @report.update(content: params[:content], location: params[:location])
                 redirect to "/reports/#{@report.id}"
               else
                 redirect to "/reports/#{@report.id}/edit"
